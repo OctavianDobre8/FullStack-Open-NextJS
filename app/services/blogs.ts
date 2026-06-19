@@ -44,6 +44,12 @@ export const incrementLikesById = (id: number) => {
   if (blog) blog.likes++;
 };
 
+export const searchBlog = (searchTerm: string) => {
+  return blogs.filter((blog) =>
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+};
+
 export const addBlog = (title: string, author: string, url: string) => {
   blogs.push({ id: nextId++, title, author, url, likes: 0 });
 };
